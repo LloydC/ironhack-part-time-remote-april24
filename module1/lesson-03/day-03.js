@@ -36,7 +36,26 @@ for(let key in olympicRecords) {
     }
   }
 
-  
   for(let athlete of athletes){
     console.log('athlete', athlete)
   }
+
+  // Array examples
+
+  const fruitOne = {
+    fruitName: 'Mango',
+    quantity: 6
+  }
+
+  const fruitTwo = {
+    fruitName: 'Dragon fruit',
+    quantity: 10
+  }
+
+  const fruitThree = {
+    fruitName: 'Banana',
+    quantity: 23
+  }
+
+  const fruitCart = [fruitOne, fruitTwo, fruitThree]
+  console.log('fruitCart', fruitCart)
