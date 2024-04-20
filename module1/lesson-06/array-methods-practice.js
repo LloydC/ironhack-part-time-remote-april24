@@ -5038,17 +5038,71 @@ const characters = [
       }
     ];
 
+
     
     // Return the list of all the characters from house Stark
+    const starkCharacters = characters.filter(character => character.houseName === "Stark" )
+    console.log('starkCharacters', starkCharacters)
     // Return the list of characters that have been killed by Gregor Clegane
+    const killedByClegane = characters.filter(character => character.killedBy && character.killedBy.includes("Gregor Clegane")) // undefined.includes()
+    console.log('killedByClegane', killedByClegane.length)
 
     // Create a function which takes a parameter "houseName" 
     // 1/The function should return the list of characters that are a part of the specified house.
     // 2/ The function should check that the houseName entered exists and if the user enters an incorrect housename
     // it should print out "The houseName you entered doesn't exist or is typed incorrectly"
 
+    function houseCharacters(houseName){
+        // return the list of characters that are a part of the specified house
+        // 1. Loop over the "characters" array
+        // 2. Check if a character.houseName is equal to the function 'houseName' argument
+        const charactersList = characters.filter(character => character.houseName === houseName); 
+
+        if(charactersList.length === 0){
+          return  "The houseName you entered doesn't exist or is typed incorrectly"
+        }
+        return charactersList;
+    }
+    const lanisterCharacters = houseCharacters("Lannister");
+    const bogusTest = houseCharacters("Tyrell")
+    console.log('Lannister characters', lanisterCharacters)
+    console.log('test', bogusTest)
+
     // Create a function which takes a parameter "killedBy"
     // 1/ The function should return in ascending order the list of characters killed by the entered name.
     // 2/ The function should check that the name entered is correct and if the user enters an incorrect name
     // it should print out "the character name you entered is incorrect or incorrectly typed"
     // 3/ If the character hasn't killed anyone, the function should return "No one has been killed by this character"
+
+       // Character {}
+    // {
+    //   characterName: "Yara Greyjoy",
+    //   houseName: "Greyjoy",
+    //   characterImageThumb: "https://images-na.ssl-images-amazon.com/images/M/MV5BMTc2NzU5ODk0MV5BMl5BanBnXkFtZTcwMzEyNDY2OQ@@._V1._SX100_SY140_.jpg",
+    //   characterImageFull: "https://images-na.ssl-images-amazon.com/images/M/MV5BMTc2NzU5ODk0MV5BMl5BanBnXkFtZTcwMzEyNDY2OQ@@._V1_SY1000_CR0,0,1503,1000_AL_.jpg",
+    //   characterLink: "/character/ch0300217/",
+    //   actorName: "Gemma Whelan",
+    //   actorLink: "/name/nm2247629/",
+    //   parents: [
+    //     "Balon Greyjoy"
+    //   ],
+    //   siblings: [
+    //     "Theon Greyjoy"
+    //   ],
+    //   killedBy: [
+    //     "No one"
+    //   ]
+    // },
+    function killedList(killedBy){
+      // return in ascending order the list of characters killed by the entered name.
+      // Use the filter method 
+      // Use the sort method
+      return characters.filter(character => character.killedBy && character.killedBy.includes(killedBy))
+                      .sort(function (characterA, characterB) {return characterA.characterName.localeCompare(characterB.characterName)})
+                      .map(character => character.characterName);
+    }
+
+    const sandorVictims = killedList("Sandor Clegane");
+    const jaimeVictims = killedList("Jaime Lannister");
+    console.log('sandorVictims', sandorVictims)
+    console.log('jaimeVictims', jaimeVictims)
