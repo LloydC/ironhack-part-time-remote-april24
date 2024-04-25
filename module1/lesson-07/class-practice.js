@@ -19,6 +19,7 @@ class Human {
     eatFood(food){
         this.calories += food.sumOfCalories; // this.calories = this.calories + food.sumOfCalories;
     }
+    
 }
 
 
