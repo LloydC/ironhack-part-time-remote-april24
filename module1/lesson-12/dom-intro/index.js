@@ -37,6 +37,7 @@ divsArray.map(div => {
     }
 })
 catElement.appendChild(h2Element);
+// catElement.innerHTML = ` <h2>Hey there</h2>`;
 el.appendChild(pElement);
 console.log('textContent', divsArray[1].textContent)
 console.log('innerText', divsArray[1].innerText)

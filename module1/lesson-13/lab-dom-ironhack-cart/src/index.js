@@ -51,6 +51,7 @@ function createProduct() {
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
-
+  const classAttr = calculatePricesBtn.getAttribute('class')
+  console.log('classAttr', classAttr)
   //... your code goes here
 });
