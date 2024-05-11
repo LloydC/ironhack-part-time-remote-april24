@@ -1,7 +1,7 @@
 const img = new Image();
 img.src = 'https://orig15.deviantart.net/8bed/f/2015/058/a/8/smb1_background_by_steamerthesteamtrain-d8jq7ea.png';
 
-const canvas = document.getElementById('example');
+const canvas = document.getElementById('background-canvas');
 const ctx = canvas.getContext('2d');
 
 const backgroundImage = {

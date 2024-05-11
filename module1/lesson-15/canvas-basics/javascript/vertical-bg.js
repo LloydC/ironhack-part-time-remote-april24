@@ -53,7 +53,7 @@ function renderMainCanvas() {
 
 function updateBackgroundCanvas() {
     backgroundImage.move(); // move the backgroundImage uop
-    renderMainCanvas(); // render Ironhackers on the secondary canvas window
+    //renderMainCanvas(); // render Ironhackers on the secondary canvas window
     ctx.clearRect(0, 0, backgroundCanvas.width, backgroundCanvas.height); // clears canvas
     backgroundImage.draw(); // set our next backgroundImage/frame
     

@@ -22,13 +22,13 @@ function draw(x, y) {
   fireballY += 3; // fireballY = 297 
 
   if(fireballX < 600){ // as long as my image start origin is not canvas top left corner
-    setTimeout(`draw(${x}, ${y})`, 50); // calls itself every 30ms/ keep changing the position of the fireball
+    setTimeout(`draw(${x}, ${y})`, 10); // calls itself every 30ms/ keep changing the position of the fireball
   }
   else {
     // ctx.clearRect(0, 0, 600, 600);
     fireballX = 0;
     fireballY = 0;
-    setTimeout(`draw(${x}, ${y})`, 50); // calls itself every 30ms
+    setTimeout(`draw(${x}, ${y})`, 10); // restart the animation
   }
 }
-draw(fireballX,fireballY)
+draw(fireballX,fireballY);
