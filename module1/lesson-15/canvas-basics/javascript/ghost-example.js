@@ -41,7 +41,7 @@ class Ghost {
    
   const ghost = new Ghost();
 
-  function updateCanvas() {
+  function updateCanvas() { // responsible for drawing our player most recent position
     ctx.clearRect(0, 0, 1500, 1700); // clearing canvas for our next animation
     // generate the next animation frame
     ctx.fillText('Ghost_x: ' + ghost.x, 50, 40);
@@ -51,20 +51,20 @@ class Ghost {
 
   document.addEventListener('keydown', event => {
     console.log('event keyCode', event.keyCode);
-    switch (event.keyCode) {
-      case 38:
+    switch (event.keyCode) { // update the player position
+      case 38: // --> up arrow key
         ghost.moveUp();
         console.log('up', ghost);
         break;
-      case 40:
+      case 40: // down arrow key
         ghost.moveDown();
         console.log('down', ghost);
         break;
-      case 37:
+      case 37: // left arrow key
         ghost.moveLeft();
         console.log('left', ghost);
         break;
-      case 39:
+      case 39: // right arrow key 
         ghost.moveRight();
         console.log('right', ghost);
         break;
@@ -72,5 +72,5 @@ class Ghost {
         ghost.reset();
         console.log('reset', ghost);
     }
-    updateCanvas();
+    updateCanvas(); // draw that update on canvas
   });

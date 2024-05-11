@@ -26,7 +26,7 @@ const backgroundImage = {
   img: img,
   x: 0,
   y:0,
-  speed: -1,
+  speed: -1, // update this to 1 for the animation to go in the opposite direction
 
   move: function() {
     this.y += this.speed;
@@ -35,7 +35,7 @@ const backgroundImage = {
 
   draw: function() {
     ctx.drawImage(this.img, 0, this.y);
-    ctx.drawImage(this.img, 0, this.y + this.img.height);
+    ctx.drawImage(this.img, 0, this.y + this.img.height); // update this to "- this.img.height" for the animation to go in the opposite direction
     // if (this.speed < 0) {
     //   ctx.drawImage(this.img, 0, this.y + this.img.height);
     // } else {
@@ -56,6 +56,6 @@ function updateBackgroundCanvas() {
     //renderMainCanvas(); // render Ironhackers on the secondary canvas window
     ctx.clearRect(0, 0, backgroundCanvas.width, backgroundCanvas.height); // clears canvas
     backgroundImage.draw(); // set our next backgroundImage/frame
-    
+    // conditional statement: until target is reached
     requestAnimationFrame(updateBackgroundCanvas); // loop our updateBackgroundCanvas call
   }
