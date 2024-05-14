@@ -48,6 +48,12 @@ class Game {
         clearInterval(this.gameIntervalId)
       }
     }
+    updateLives(){
+      document.getElementById('lives').textContent = this.lives;
+    }
+    updateScore(){
+      document.getElementById('score').textContent = this.score;
+    }
 
     endGame() {
         this.player.element.remove(); // remove the player from the game
@@ -63,6 +69,8 @@ class Game {
   
     update() { // responsible for the updates of all the elements of the game
     //   console.log("in the update");
+      this.updateScore()
+      this.updateLives()
       this.player.move(); // get most recent player position
 
       for (let i = 0; i < this.obstacles.length; i++) {
@@ -83,6 +91,16 @@ class Game {
             // Update the counter variable to account for the removed obstacle
             i--;
         }
+        else if (obstacle.top > this.height) {
+          // Increase the score by 1
+          this.score++;
+          // Remove the obstacle from the DOM
+          obstacle.element.remove();
+          // Remove obstacle object from the array
+          this.obstacles.splice(i, 1);
+          // Update the counter variable to account for the removed obstacle
+          i--;
+        }
 
         // If the lives are 0, end the game
         if (this.lives === 0) {
@@ -94,7 +112,7 @@ class Game {
             
              // Create a new obstacle based on a random probability
     // when there is no other obstacles on the screen
-        if (Math.random() > 0.98 && this.obstacles.length < 5) {
+        if (Math.random() > 0.98 && this.obstacles.length < 3) {
             this.obstacles.push(new Obstacle(this.gameScreen));  // generate the obstacles
         }
     }

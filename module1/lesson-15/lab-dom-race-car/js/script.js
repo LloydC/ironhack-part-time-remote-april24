@@ -3,16 +3,6 @@ window.onload = function () {
   const restartButton = document.getElementById("restart-button");
   let game; // added undefined --> Game {}
 
-  startButton.addEventListener("click", function () {
-    startGame();
-  });
-
-  function startGame() {
-    // console.log("start game");
-    game = new Game(); // added
-    game.start(); // added
-  }
-
   // Function that handles keydown event
   function handleKeydown(event) {
     const key = event.key;
@@ -45,6 +35,28 @@ window.onload = function () {
       }
     }
   }
-   // Add the handleKeydown function as an event listener for the keydown event
-   window.addEventListener("keydown", handleKeydown);
+
+  function startGame() {
+    // console.log("start game");
+    game = new Game(); // added
+    game.start(); // added
+  }
+   // The function that reloads the page to start a new game
+   function restartGame() {
+    location.reload();
+  }
+
+  // Add the handleKeydown function as an event listener for the keydown event
+  window.addEventListener("keydown", handleKeydown);
+
+  startButton.addEventListener("click", function () {
+    startGame();
+  });
+ 
+   restartButton.addEventListener("click", function () {
+    // Call the restartGame function when the button is clicked
+    startGame();
+  });
+
+ 
 };
