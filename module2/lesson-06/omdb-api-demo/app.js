@@ -49,9 +49,9 @@ app.get("/movie/:movieId", (req, res) => {
     .get(
       `http://www.omdbapi.com/?apikey=${process.env.OMDB_API_Key}&i=${movieId}`
     )
-    .then((OMDBMovie) => {
-      console.log("OMDBMovie data",OMDBMovie.data);
-      const movie = OMDBMovie.data;
+    .then((OMDBMovieResponse) => {
+      console.log("OMDBMovieResponse data",OMDBMovieResponse.data);
+      const movie = OMDBMovieResponse.data;
 
       res.render("movie", { movie });
     })
