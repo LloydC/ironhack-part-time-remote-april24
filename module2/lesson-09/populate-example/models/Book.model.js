@@ -7,6 +7,8 @@ const bookSchema = new Schema({
   },
   description: String,
   cast: [{ type: Schema.Types.ObjectId, ref: "Character" }],
+  author: { type: Schema.Types.ObjectId, ref: "Author" },
+  coAuthor: [{ type: Schema.Types.ObjectId, ref: "Author" }]
 });
 
 const BookModel = model("Book", bookSchema);
