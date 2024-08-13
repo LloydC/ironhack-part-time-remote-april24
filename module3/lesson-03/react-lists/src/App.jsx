@@ -5,7 +5,7 @@ import './App.css'
  
 function App() {
   // Declare a new state variable, which we'll call "isLoading"
-  const [isLoading, setIsLoading] = useState(true); // <-- add
+  const [isLoading, setIsLoading] = useState(false); // <-- add
  
   if (isLoading) {
     return <Spinner />;
