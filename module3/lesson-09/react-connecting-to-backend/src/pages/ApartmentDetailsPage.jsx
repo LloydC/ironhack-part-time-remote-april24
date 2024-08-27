@@ -19,6 +19,7 @@ function ApartmentDetailsPage(){
     useEffect(()=>{
         getApartment()
     }, [])
+    
     return(
         <div>
             <h1>Apartment Details Page</h1>
