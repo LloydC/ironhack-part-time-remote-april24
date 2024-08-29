@@ -1,0 +1,19 @@
+[
+    {"en": {
+        "homePage": {
+            "pageTitle": "Hi! My Name is ..."
+        },
+        "projectsPage": {
+            "pageTitle": "My Projects"
+        }
+        },
+        "fr": {
+        "homePage": {
+            "pageTitle": "Bonjour! Je m'appelle..."
+        },
+        "projectsPage": {
+            "pageTitle": "Mes Projets"
+        }
+        }
+    }
+]
